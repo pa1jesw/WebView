@@ -16,21 +16,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         wv=findViewById(R.id.wv);
         wv.loadUrl("http://www.vogella.com/tutorials/AndroidServices/article.html");
-        wv.canGoBackOrForward(20);
+        
+
         WebSettings ws = wv.getSettings();
         ws.setJavaScriptEnabled(true);
-        ws.setJavaScriptCanOpenWindowsAutomatically(true);
+
         ws.setLoadWithOverviewMode(true);
-        wv.canGoBack();
-        wv.canGoForward();
+
 
         wv.setWebViewClient(new WebViewClient());
 
-        class MyWebViewClient extends WebViewClient {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl("http://www.vogella.com/");
-                return true;
-            }}
+
     }
 }
